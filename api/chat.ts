@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   const a = await session.prompt(q, {
     onToken(chunk) {
       const token = context.decode(chunk)
-      ws.send(token)
+      ws?.send(token)
     },
   })
 
